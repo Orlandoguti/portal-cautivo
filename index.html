@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexion</title>
+    <!-- Enlace a los estilos de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Establecemos el contenedor principal para que ocupe toda la pantalla */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4; /* Color de fondo opcional */
+        }
+
+        /* Contenedor del carrusel */
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;  /* Centra el texto dentro de los elementos */
+            position: relative; /* Necesario para posicionar los botones de forma absoluta */
+            width: 100%; /* Asegura que el carrusel ocupe el 100% del ancho */
+        }
+
+        /* Ajuste de las imágenes dentro del carrusel */
+        .carousel-item img {
+            width: 100%;           /* Ajusta el ancho al 100% del contenedor */
+            height: 500px;         /* Fija una altura constante para todas las imágenes */
+            object-fit: contain;   /* Ajusta la imagen para que se vea completa sin recortes */
+            object-position: center; /* Centra la imagen si tiene espacio extra */
+        }
+
+        /* Estilos para el botón "Cerrar" */
+        .close-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            width: 80%; /* El botón ocupa el 80% del ancho en dispositivos pequeños */
+            max-width: 250px; /* El ancho máximo del botón */
+        }
+
+        .close-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Estilos para los controles del carrusel */
+        .carousel-control-prev, .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .carousel-control-prev {
+            left: 10px;
+        }
+
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .carousel-inner {
+                width: 100%;
+            }
+            .close-btn {
+                width: 100%; /* En pantallas muy pequeñas, el botón es más grande */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid p-0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- Indicadores -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Contenedor del carrusel -->
+        <div class="carousel-inner">
+            <!-- Primer elemento del carrusel -->
+            <div class="carousel-item active">
+                <img src="1.jpg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <!-- Segundo elemento del carrusel -->
+            <div class="carousel-item">
+                <img src="2.png" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <!-- Tercer elemento del carrusel -->
+            <div class="carousel-item">
+                <img src="3.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón para cerrar la página -->
+    <button class="close-btn" onclick="window.close();">Conectar</button>
+</div>
+
+<!-- Scripts necesarios para que el carrusel funcione -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
